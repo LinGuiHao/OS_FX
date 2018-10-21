@@ -14,6 +14,8 @@ public class Equipment {
     private Timer timerOfDevice;
     //设备占用表
     private DMT[] DeviceUseTable;
+    //设备是否使用
+    private boolean[] isUsingDevice;
     //设备等待队列
     private Queue<DMT> waitingProcess;
     //使用状态
@@ -25,6 +27,7 @@ public class Equipment {
     public Equipment(char equipmentNum,int numberOfEquipemnt,ProcessOSImp processOS){
         this.equipmentNum = equipmentNum;
         this.numberOfEquipemnt = numberOfEquipemnt;
+        isUsingDevice = new boolean[numberOfEquipemnt];
         timerOfDevice = new Timer();
         waitingProcess = new LinkedList<>();
         DeviceUseTable = new DMT[numberOfEquipemnt];
@@ -34,15 +37,19 @@ public class Equipment {
             public void run() {
                 for(int i = 0 ;i < DeviceUseTable.length ;i++){
                     if(DeviceUseTable[i] != null){
+                        System.out.println(equipmentNum);
+                        System.out.println(DeviceUseTable[i].getUseDeviceProcess());
                         DeviceUseTable[i].setUseTime(DeviceUseTable[i].getUseTime()-1);
-                        System.out.println(equipmentNum+"-1s");
                         if(DeviceUseTable[i].getUseTime() == FINSIH_USE_DEVICE){
                             processOS.awake(DeviceUseTable[i].getUseDeviceProcess());
                             DeviceUseTable[i] = null;
+                            isUsingDevice[i] = false;
                         }
-                    }else {
+                    }
+                    if(DeviceUseTable[i] == null){
                         if(!waitingProcess.isEmpty()){
                             DeviceUseTable[i] = waitingProcess.poll();
+                            isUsingDevice[i] = true;
                         }
                     }
                 }
@@ -50,8 +57,16 @@ public class Equipment {
         },0,1000);
     }
 
+    public DMT[] getDeviceUseTable() {
+        return DeviceUseTable;
+    }
+
     public Queue<DMT> getWaitingProcess() {
         return waitingProcess;
+    }
+
+    public boolean[] getIsUsingDevice() {
+        return isUsingDevice;
     }
 
     public void setWaitingProcess(Queue<DMT> waitingProcess) {

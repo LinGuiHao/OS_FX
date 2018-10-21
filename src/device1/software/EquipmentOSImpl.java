@@ -16,24 +16,28 @@ public class EquipmentOSImpl implements EquipmentOS {
     private  Equipment equipmentA;
     private Equipment equipmentB;
     private Equipment equipmentC;
+    private ProcessOSImp processOS;
 
     public EquipmentOSImpl(ProcessOSImp processOS){
         equipmentA = new Equipment('A',3,processOS);
         equipmentB = new Equipment('B',2,processOS);
         equipmentC = new Equipment('C',1,processOS);
-
+        this.processOS = processOS;
     }
     @Override
     public boolean apply(PCB usingProcess, char equipmentNum, int useTime) {
 
         if(equipmentNum == 'A'){
             addWaitingProcess(equipmentA,usingProcess,useTime);
+            processOS.block(usingProcess);
             return true;
         }else if(equipmentNum == 'B'){
             addWaitingProcess(equipmentB,usingProcess,useTime);
+            processOS.block(usingProcess);
             return true;
         }else if(equipmentNum == 'C'){
             addWaitingProcess(equipmentC,usingProcess,useTime);
+            processOS.block(usingProcess);
             return true;
         }else{
             System.out.println("无该种设备");
@@ -48,4 +52,15 @@ public class EquipmentOSImpl implements EquipmentOS {
         equipment.setWaitingProcess(afterDealProcessQueue);
     }
 
+    public Equipment getEquipmentA() {
+        return equipmentA;
+    }
+
+    public Equipment getEquipmentB() {
+        return equipmentB;
+    }
+
+    public Equipment getEquipmentC() {
+        return equipmentC;
+    }
 }

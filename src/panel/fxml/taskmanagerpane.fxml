@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="panel.controller.ProcessController">
+    <tabs>
+        <Tab text="   进   程   ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <HBox prefHeight="50.0" prefWidth="500.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="50.0" prefWidth="350.0" style="-fx-border-color: gray;" text="名    称" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" prefHeight="70.0" prefWidth="150.0" style="-fx-border-color: gray;" text="状    态">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <ScrollPane layoutY="50.0" prefHeight="490.0" prefWidth="500.0">
+                            <content>
+                                <Pane fx:id="processPane" prefHeight="0.0" prefWidth="498.0">
+                                    <children>
+                                        <VBox fx:id="processBox" prefHeight="1000.0" prefWidth="500.0" />
+                                        <Line fx:id="processLine" endX="350.0" endY="490.0" layoutX="-1.0" startX="350.0" />
+                                    </children>
+                                </Pane>
+                            </content>
+                        </ScrollPane>
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="   设   备   ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox prefHeight="540.0" prefWidth="500.0">
+                            <children>
+                                <HBox prefHeight="60.0" prefWidth="499.0" style="-fx-border-color: blue;">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="140.0" style="-fx-border-color: gray;" text="设    备">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER" prefHeight="67.0" prefWidth="240.0" style="-fx-border-color: gray;" text="设 备 占 用 情 况">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="140.0" style="-fx-border-color: gray;" text="占 用 进 程">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="A1" fill="BLUE" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="A1" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eA1" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelA1" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefHeight="18.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="A2" fill="BLUE" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="A2" />
+                                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eA2" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelA2" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="A3" fill="BLUE" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="A3" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eA3" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelA3" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="B1" fill="ORANGE" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="B1" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eB1" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelB1" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="B2" fill="ORANGE" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="B2" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eB2" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelB2" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="20.0" prefWidth="500.0" />
+                                <HBox prefHeight="50.0" prefWidth="500.0">
+                                    <children>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Circle fx:id="C1" fill="RED" layoutX="67.0" layoutY="25.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                                                <Label alignment="CENTER" layoutX="59.0" layoutY="16.0" text="C1" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="52.0" prefWidth="234.0">
+                                            <children>
+                                                <ProgressBar fx:id="eC1" layoutX="17.0" layoutY="16.0" prefWidth="200.0" progress="0.0" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="59.0" prefWidth="134.0">
+                                            <children>
+                                                <Label fx:id="labelC1" alignment="CENTER" layoutX="2.0" layoutY="16.0" prefWidth="130.0" text="null" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Line endX="134.0" endY="1.0" startX="134.0" startY="545.0" stroke="GREY" />
+                        <Line endX="357.0" endY="-9.0" layoutX="10.0" layoutY="10.0" startX="357.0" startY="544.0" stroke="GREY" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

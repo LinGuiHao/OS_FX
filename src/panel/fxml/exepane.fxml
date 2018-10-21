@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="panel.controller.ExeProcessResultController">
+   <children>
+      <ScrollPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;">
+         <content>
+            <VBox fx:id="resultBox" prefHeight="598.0" prefWidth="498.0" style="-fx-background-color: black;" />
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>

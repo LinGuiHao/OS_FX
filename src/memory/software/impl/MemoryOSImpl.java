@@ -1,13 +1,7 @@
 package memory.software.impl;
 
-import java.sql.Savepoint;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Random;
 
-import javax.print.attribute.standard.RequestingUserName;
-
-import org.junit.Test;
 
 import memory.hardware.MemoryTable;
 import memory.hardware.MyMemory;

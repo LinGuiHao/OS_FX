@@ -14,7 +14,6 @@ public class ProcessOSImp  implements ProcessOS {
 	//PCB队列
 	private Queue<PCB> readyProcess;
 	private Queue<PCB> blockProcess;
-	private Queue<PCB> blankProcess;
 
 	private CPUImp cpuOS;
 	private byte[] data;
@@ -24,7 +23,6 @@ public class ProcessOSImp  implements ProcessOS {
 	public ProcessOSImp(MemoryOSImpl memoryOS) {
 		readyProcess = new LinkedList<>();
 		blockProcess = new LinkedList<>();
-		blankProcess = new LinkedList<>();
 		cpuOS = new CPUImp();
 		cpuOS.runningCPU(this,memoryOS);
 	}
@@ -75,7 +73,15 @@ public class ProcessOSImp  implements ProcessOS {
 		return readyProcess;
 	}
 
+	public Queue<PCB> getBlockProcess() {
+		return blockProcess;
+	}
+
 	public byte[] getData() {
 		return data;
+	}
+
+	public CPUImp getCpuOS() {
+		return cpuOS;
 	}
 }

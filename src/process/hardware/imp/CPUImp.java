@@ -50,10 +50,11 @@ public class CPUImp implements CPU {
                         runningProcess.setPsw(Number.PROCESS_READY);
                         cpuRegister.setPsw((short) runningProcess.getPsw());
                     }
-                }else {
+                }
+                if(runningProcess != null){
                     if(timeSlock == 0){
                         //时间片为0的时候阻塞进程，将进程加入到就绪队列
-                        runningProcess.setState(Number.PROCESS_BLOCKING);
+                        runningProcess.setState(Number.PROCESS_READY);
                         processOS.awake(runningProcess);
                         runningProcess = null;
                         timeSlock = 6;
@@ -180,10 +181,15 @@ public class CPUImp implements CPU {
        runningProcess.setAx(cpuRegister.getIr());
     }
 
+    public PCB getRunningProcess() {
+        return runningProcess;
+    }
 
     public int getCpuClock() {
         return cpuClock;
     }
 
-
+    public EquipmentOSImpl getEquipmentOS() {
+        return equipmentOS;
+    }
 }
